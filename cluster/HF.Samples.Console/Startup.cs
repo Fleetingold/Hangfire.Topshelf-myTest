@@ -47,6 +47,7 @@ namespace HF.Samples.Console
 			services.AddHangfire(x =>
 			{
                 //var connectionString = Configuration.GetConnectionString("hangfire.redis");
+                //GlobalConfiguration.Configuration.UseRedisStorage(connectionString);
                 x.UseSqlServerStorage("server=192.168.1.250;database=Hangfire;uid=sa;pwd=abc-123;Pooling=False;");
 			});
 
