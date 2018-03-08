@@ -74,6 +74,7 @@ namespace HF.Samples.ServerNode
 
 			UseAutofac();
 
+            // Hangfire中使用Redis存储，性能将会是巨大提升
 			GlobalConfiguration.Configuration.UseRedisStorage();
 
 			_backgroundJobServer = new BackgroundJobServer(options);
