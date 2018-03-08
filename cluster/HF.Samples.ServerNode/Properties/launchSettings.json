@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HF.Samples.ServerNode": {
+      "commandName": "Project",
+      "commandLineArgs": "nodeA -q order,storage"
+    }
+  }
+}

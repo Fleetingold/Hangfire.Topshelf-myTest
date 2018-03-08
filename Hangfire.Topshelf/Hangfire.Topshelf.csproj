@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Hangfire.Topshelf</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Hangfire.Topshelf</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json;recurringjob.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hangfire.Samples.Framework\Hangfire.Samples.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Topshelf" Version="4.0.3" />
+    <PackageReference Include="Autofac" Version="4.2.1" />
+    <PackageReference Include="Autofac.WebApi2" Version="4.0.1" />
+    <PackageReference Include="HangFire.Autofac" Version="2.3.0-*" />
+    <PackageReference Include="Hangfire.Core" Version="1.6.7" />
+    <PackageReference Include="Hangfire.Console" Version="1.1.5" />
+    <PackageReference Include="Hangfire.Dashboard.Authorization" Version="2.1.0" />
+    <PackageReference Include="HangFire.Redis.StackExchange" Version="1.6.7.7" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.6.7" />
+    <PackageReference Include="Hangfire.SqlServer.MSMQ" Version="1.6.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
+    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.14" />
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Owin.Host.HttpListener" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Owin.Hosting" Version="3.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Owin" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.Core" Version="5.5.3" />
+    <PackageReference Include="Serilog" Version="2.3.0" />
+    <PackageReference Include="Serilog.Sinks.Literate" Version="2.0.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.2.0" />
+    <PackageReference Include="Hangfire.RecurringJobExtensions" Version="1.1.4-*" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <Reference Include="System.Data" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
