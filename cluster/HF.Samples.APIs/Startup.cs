@@ -39,10 +39,10 @@ namespace HF.Samples.APIs
 
 			services.AddMvc();
 
-            // var connectionString = Configuration.GetConnectionString("hangfire.redis");
-            // GlobalConfiguration.Configuration.UseRedisStorage(connectionString);
+             var connectionString = Configuration.GetConnectionString("hangfire.redis");
+             GlobalConfiguration.Configuration.UseRedisStorage(connectionString);
             // var connectionString = "server=192.168.1.250;database=Hangfire;uid=sa;pwd=abc-123;Pooling=False;";
-             GlobalConfiguration.Configuration.UseSqlServerStorage("server=192.168.1.250;database=Hangfire;uid=sa;pwd=abc-123;Pooling=False;");
+             //GlobalConfiguration.Configuration.UseSqlServerStorage("server=192.168.1.250;database=Hangfire;uid=sa;pwd=abc-123;Pooling=False;");
 
             services.AddSwaggerGen();
 
