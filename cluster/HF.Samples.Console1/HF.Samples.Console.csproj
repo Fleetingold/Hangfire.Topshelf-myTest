@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Hangfire.Samples.Framework\Hangfire.Samples.Framework.csproj" />
     <ProjectReference Include="..\..\Hangfire.SqlServer\Hangfire.SqlServer.NetStandard.csproj" />
     <ProjectReference Include="..\HF.Samples.GoodsService\HF.Samples.GoodsService.csproj" />
     <ProjectReference Include="..\HF.Samples.OrderService\HF.Samples.OrderService.csproj" />
     <ProjectReference Include="..\HF.Samples.StorageService\HF.Samples.StorageService.csproj" />
+    <ProjectReference Include="..\..\Hangfire.Samples.Framework\Hangfire.Samples.Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

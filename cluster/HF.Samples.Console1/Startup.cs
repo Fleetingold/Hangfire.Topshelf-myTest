@@ -12,6 +12,7 @@ using Hangfire.Samples.Framework;
 using HF.Samples.GoodsService;
 using HF.Samples.OrderService;
 using HF.Samples.StorageService;
+using Hangfire.SqlServer;
 
 namespace HF.Samples.Console
 {
@@ -45,10 +46,10 @@ namespace HF.Samples.Console
 
 			services.AddHangfire(x =>
 			{
-				var connectionString = Configuration.GetConnectionString("hangfire.redis");
-				x.UseRedisStorage(connectionString);
+                var connectionString = Configuration.GetConnectionString("hangfire.redis");
+                x.UseRedisStorage(connectionString);
                 //x.UseSqlServerStorage("server=192.168.1.250;database=Hangfire;uid=sa;pwd=abc-123;Pooling=False;");
-            });
+			});
 
 			return RegisterAutofac(services);
 		}
@@ -58,11 +59,12 @@ namespace HF.Samples.Console
 
 			builder.Populate(services);
 
-			builder.RegisterModule(new DelegateModule(() => new Assembly[]
-			{
-				typeof(IProductService).GetTypeInfo().Assembly,
-				typeof(IOrderService).GetTypeInfo().Assembly,
-				typeof(IInventoryService).GetTypeInfo().Assembly
+            builder.RegisterModule(new DelegateModule(() => new Assembly[]
+            {
+                typeof(IProductService).GetTypeInfo().Assembly,
+                typeof(IOrderService).GetTypeInfo().Assembly,
+                typeof(IInventoryService).GetTypeInfo().Assembly,
+                typeof(IPersistentJobQueue).GetTypeInfo().Assembly
 			}));
 
 			var container = builder.Build();
@@ -100,7 +102,7 @@ namespace HF.Samples.Console
 					template: "{controller=Home}/{action=Index}/{id?}");
 			});
 
-			app.UseHangfireDashboard();
-		}
+            app.UseHangfireDashboard();
+        }
 	}
 }
