@@ -24,7 +24,10 @@ namespace HF.Samples.ServerNode
 
 		public static void Main(string[] args)
 		{
-			Log.Logger = new LoggerConfiguration()
+            // 从Hangfire 1.3.0开始，Hangfire引入了日志组件LibLog,
+            // 所以应用不需要做任何改动就可以兼容如下日志组件：Serilog、NLog、Log4Net、EntLib Logging、Loupe、Elmah
+            // 配置 serilog如下，LibLog组件会自动发现并使用serilog
+            Log.Logger = new LoggerConfiguration()
 				.MinimumLevel.Verbose()
 				.WriteTo.LiterateConsole()
 				.WriteTo.RollingFile("logs\\log-{Date}.txt")
