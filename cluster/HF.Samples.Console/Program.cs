@@ -12,6 +12,9 @@ namespace HF.Samples.Console
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
+                // 陈烈
+                // http://blog.csdn.net/yzj_xiaoyue/article/details/79157420
+                .UseUrls("http://*:9000")
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
